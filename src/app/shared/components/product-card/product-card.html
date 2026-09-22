@@ -1,0 +1,28 @@
+<div class="product-card h-100">
+  <div class="thumb">
+    <span class="badge-ghee" *ngIf="product.isGheeMade">Made with Ghee</span>
+    <img [src]="product.image" [alt]="product.name" loading="lazy" />
+  </div>
+
+  <div class="body">
+    <h6 class="name">{{ product.name }}</h6>
+
+    <div class="price-row">
+      <span class="price">₹{{ product.price }}</span>
+      <span class="mrp" *ngIf="product.mrp">₹{{ product.mrp }}</span>
+    </div>
+
+    <ng-container *ngIf="product.discountLabel">
+      <span class="badge-drop">{{ product.discountLabel }}</span>
+    </ng-container>
+
+    <div class="meta-row">
+      <span class="weight-pill">{{ product.weight }}</span>
+      <span class="rating" *ngIf="product.rating">
+        <i class="bi bi-star-fill"></i> {{ product.rating }}
+      </span>
+    </div>
+
+    <button class="btn-brand w-100 mt-3" (click)="onAdd()">Add to cart</button>
+  </div>
+</div>

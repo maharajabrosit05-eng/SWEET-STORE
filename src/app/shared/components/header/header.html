@@ -1,0 +1,56 @@
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg py-3">
+    <div class="container">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
+        <span class="brand-mark">S</span>
+        <span class="brand-text">
+          <span class="brand-name">Sweet Store</span>
+          <span class="brand-tag">Sweets &amp; Snacks</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" (click)="toggleMenu()" aria-label="Toggle navigation">
+        <i class="bi" [class.bi-list]="!isMenuOpen" [class.bi-x-lg]="isMenuOpen"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" [class.show]="isMenuOpen">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-4 my-3 my-lg-0">
+
+          <li class="nav-item dropdown" (mouseenter)="toggleShopDropdown(true)" (mouseleave)="toggleShopDropdown(false)">
+            <a class="nav-link d-flex align-items-center gap-1" routerLink="/shop">
+              Shop All <i class="bi bi-chevron-down small"></i>
+            </a>
+
+            <ng-container *ngIf="isShopDropdownOpen">
+              <div class="mega-menu shadow">
+                <ng-container *ngFor="let group of shopMenu">
+                  <div class="mega-col">
+                    <h6>{{ group.title }}</h6>
+                    <a *ngFor="let link of group.links" [routerLink]="['/shop', link.slug]">
+                      {{ link.label }}
+                    </a>
+                  </div>
+                </ng-container>
+              </div>
+            </ng-container>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" routerLink="/shop/gifting">Gifting</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0)">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/about" routerLinkActive="active">Our Story</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 header-actions">
+          <button class="icon-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+          <button class="icon-btn" aria-label="Account"><i class="bi bi-person"></i></button>
+          <a class="icon-btn position-relative" routerLink="/cart" aria-label="Cart">
+            <i class="bi bi-bag"></i>
+            <span class="cart-badge" *ngIf="cartCount() > 0">{{ cartCount() }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

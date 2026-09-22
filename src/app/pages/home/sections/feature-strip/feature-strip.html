@@ -1,0 +1,12 @@
+<div class="feature-strip">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center justify-content-md-between gap-3">
+      <ng-container *ngFor="let f of features; let last = last">
+        <div class="feature-item">
+          <i class="bi" [ngClass]="f.icon"></i>
+          <span>{{ f.label }}</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+.free-shipping-bar {
+  background: var(--color-gold-light);
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  color: var(--color-maroon);
+
+  &.unlocked {
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.progress-track {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  transition: width .3s ease;
+}
+
+.cart-line {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 14px;
+}
+
+.line-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.line-info {
+  flex: 1;
+
+  h6 {
+    color: var(--color-text);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+}
+
+.line-price {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.line-mrp {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--color-cream-dark);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+
+  button {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    width: 22px;
+    color: var(--color-primary-dark);
+  }
+}
+
+.remove-btn {
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+
+  &:hover { color: var(--color-maroon); }
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 100px;
+}
+
+.continue-link {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.brand-mark-lg {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

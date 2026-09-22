@@ -1,0 +1,80 @@
+<section class="section cart-page">
+  <div class="container">
+    <h1 class="section-title text-start mb-4">Shopping Cart</h1>
+
+    <ng-container *ngIf="lines.length > 0; else emptyCart">
+
+      <div class="free-shipping-bar mb-4" *ngIf="amountToFreeShipping > 0; else freeShippingUnlocked">
+        <p class="mb-2 small">
+          Add items worth ₹{{ amountToFreeShipping }} more to unlock <strong>FREE shipping</strong>
+        </p>
+        <div class="progress-track">
+          <div class="progress-fill" [style.width.%]="freeShippingProgress"></div>
+        </div>
+      </div>
+      <ng-template #freeShippingUnlocked>
+        <div class="free-shipping-bar unlocked mb-4">
+          <i class="bi bi-truck me-2"></i> You've unlocked FREE shipping!
+        </div>
+      </ng-template>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="cart-line" *ngFor="let line of lines">
+            <img [src]="line.product.image" [alt]="line.product.name" class="line-thumb" />
+            <div class="line-info">
+              <h6>{{ line.product.name }}</h6>
+              <span class="text-muted small">Weight: {{ line.product.weight }}</span>
+              <div class="d-flex align-items-center gap-2 mt-2">
+                <span class="line-price">₹{{ line.product.price * line.qty }}</span>
+                <span class="line-mrp" *ngIf="line.product.mrp">₹{{ line.product.mrp * line.qty }}</span>
+              </div>
+            </div>
+            <div class="qty-stepper">
+              <button (click)="decrement(line.product.id, line.qty)" aria-label="Decrease quantity">−</button>
+              <span>{{ line.qty }}</span>
+              <button (click)="increment(line.product.id, line.qty)" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="remove-btn" (click)="remove(line.product.id)" aria-label="Remove item">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="summary-card">
+            <h6 class="mb-3">Price Summary</h6>
+            <div class="d-flex justify-content-between small mb-2">
+              <span>MRP Total</span>
+              <span>₹{{ mrpTotal }}</span>
+            </div>
+            <div class="d-flex justify-content-between small mb-2 text-success" *ngIf="savings > 0">
+              <span>You save</span>
+              <span>−₹{{ savings }}</span>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between fw-bold mb-3">
+              <span>Subtotal</span>
+              <span>₹{{ subtotal }}</span>
+            </div>
+            <button class="btn-brand w-100">
+              Buy Now <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+            <a routerLink="/shop" class="d-block text-center small mt-3 continue-link">
+              Continue Shopping
+            </a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #emptyCart>
+      <div class="empty-cart text-center py-5">
+        <div class="brand-mark-lg mx-auto">S</div>
+        <h5 class="mt-4 mb-2">Your cart is currently empty.</h5>
+        <p class="text-muted mb-4">Looks like you haven't added anything to your cart yet.</p>
+        <a routerLink="/shop" class="btn-brand">Shop Now</a>
+      </div>
+    </ng-template>
+  </div>
+</section>

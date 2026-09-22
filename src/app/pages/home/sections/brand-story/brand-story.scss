@@ -1,0 +1,52 @@
+.brand-story {
+  background: var(--color-primary-dark);
+  padding: 64px 0;
+}
+
+.brand-mark-lg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.since-tag {
+  display: block;
+  color: var(--color-gold);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.story-title {
+  color: #fff;
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  margin-bottom: 10px;
+}
+
+.pillar-icon {
+  font-size: 1.8rem;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pillar-title {
+  color: #fff;
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+}
+
+.pillar-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.78rem;
+}

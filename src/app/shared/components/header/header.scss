@@ -1,0 +1,141 @@
+.site-header {
+  background: var(--color-cream-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--color-primary-dark);
+}
+
+.brand-tag {
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.nav-link {
+  color: var(--color-text) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+
+  &.active,
+  &:hover {
+    color: var(--color-primary-dark) !important;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.4rem;
+  color: var(--color-primary-dark);
+  background: none;
+}
+
+.icon-btn {
+  border: none;
+  background: none;
+  color: var(--color-text);
+  font-size: 1.15rem;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background .15s ease;
+
+  &:hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+  }
+}
+
+.cart-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--color-maroon);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  min-width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2px;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  display: flex;
+  gap: 40px;
+  min-width: 320px;
+  z-index: 1100;
+
+  .mega-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h6 {
+      font-family: var(--font-heading);
+      color: var(--color-primary-dark);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: var(--color-text-muted);
+      font-size: 0.88rem;
+      &:hover { color: var(--color-primary); }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .mega-menu {
+    position: static;
+    box-shadow: none !important;
+    flex-direction: column;
+    gap: 16px;
+    padding: 14px 0 14px 16px;
+  }
+  .header-actions {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,174 @@
+/* ===========================================================
+   GLOBAL THEME — Traditional Sweets Store
+   Palette extracted from reference video:
+   - Cream background   #FAF8E9
+   - Deep forest green  #116454 / #1C9865
+   - Gold accent        #D4A017
+   - Dark brown text    #2B2318
+   =========================================================== */
+
+:root {
+  --color-cream: #faf8e9;
+  --color-cream-soft: #fffbf0;
+  --color-cream-dark: #f1eddb;
+
+  --color-primary: #1c9865;
+  --color-primary-dark: #116454;
+  --color-primary-light: #e5f3ec;
+
+  --color-gold: #d4a017;
+  --color-gold-light: #f7e7b8;
+
+  --color-maroon: #7a2e2e;
+  --color-text: #2b2318;
+  --color-text-muted: #6b6252;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Poppins', 'Segoe UI', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  --shadow-card: 0 6px 20px rgba(43, 35, 24, 0.08);
+  --shadow-card-hover: 0 12px 28px rgba(28, 152, 101, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Reusable section utilities ---------- */
+.section {
+  padding: 56px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  margin: 0 auto 36px;
+  font-size: 0.98rem;
+}
+
+.divider-leaf {
+  width: 60px;
+  height: 3px;
+  background: var(--color-gold);
+  border-radius: 3px;
+  margin: 10px auto 30px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-brand {
+  background-color: var(--color-primary);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  transition: background-color .2s ease, transform .15s ease;
+}
+.btn-brand:hover {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-outline-brand {
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: var(--radius-sm);
+  transition: all .2s ease;
+}
+.btn-outline-brand:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.badge-drop {
+  background-color: var(--color-maroon);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: .3px;
+}
+
+.badge-ghee {
+  background-color: var(--color-gold-light);
+  color: #7a5c00;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+
+/* ---------- ng-select brand override ---------- */
+.ng-select.brand-select .ng-select-container {
+  border-radius: var(--radius-sm);
+  border-color: var(--color-cream-dark);
+  min-height: 40px;
+}
+.ng-select.brand-select.ng-select-focused .ng-select-container {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+.ng-select .ng-option.ng-option-selected, .ng-select .ng-option.ng-option-marked {
+  background-color: var(--color-primary-light) !important;
+  color: var(--color-primary-dark) !important;
+}
+
+/* ---------- Scrollbar (product strips) ---------- */
+.scroll-strip::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-strip::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+  .section { padding: 36px 0; }
+}

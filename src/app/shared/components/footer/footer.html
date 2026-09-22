@@ -1,0 +1,74 @@
+<footer class="site-footer">
+  <div class="newsletter-band">
+    <div class="container text-center">
+      <h3 class="text-white mb-2">Get 10% off your first order</h3>
+      <p class="text-white-50 mb-4">Subscribe for offers, new launches &amp; festive specials.</p>
+
+      <form class="newsletter-form" (ngSubmit)="onSubscribe()" #nf="ngForm">
+        <ng-container *ngIf="!subscribed; else thanksBlock">
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter your email"
+            [(ngModel)]="email"
+            required
+            email
+          />
+          <button type="submit" class="btn-brand" [disabled]="nf.invalid">Subscribe</button>
+        </ng-container>
+        <ng-template #thanksBlock>
+          <p class="text-warning fw-semibold mb-0">
+            <i class="bi bi-check-circle-fill me-1"></i> Thanks! Check your inbox for the coupon code.
+          </p>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="brand-mark">S</span>
+          <span class="brand-name">Sweet Store</span>
+        </div>
+        <p class="text-muted small">
+          Since 1998 — timeless Indian sweets and savouries, freshly prepared with pure ghee
+          and lab-tested ingredients, delivered across India.
+        </p>
+        <div class="d-flex gap-2 mt-3">
+          <a class="social-icon" href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+          <a class="social-icon" href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+          <a class="social-icon" href="javascript:void(0)"><i class="bi bi-whatsapp"></i></a>
+          <a class="social-icon" href="javascript:void(0)"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <ng-container *ngFor="let col of footerLinks">
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">{{ col.title }}</h6>
+          <ul class="list-unstyled footer-links">
+            <li *ngFor="let link of col.links"><a href="javascript:void(0)">{{ link }}</a></li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <div class="col-lg-4">
+        <h6 class="footer-heading">Reach us</h6>
+        <ul class="list-unstyled footer-links">
+          <li><i class="bi bi-geo-alt me-2"></i>Chennai, Tamil Nadu, India</li>
+          <li><i class="bi bi-telephone me-2"></i>+91 90000 00000</li>
+          <li><i class="bi bi-envelope me-2"></i>hello&#64;sweetstore.in</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span class="small text-muted">&copy; {{ year }} BROS IT SOLUTIONS. All rights reserved.</span>
+      <span class="small text-muted">Made with <i class="bi bi-heart-fill text-danger"></i> in Tamil Nadu</span>
+    </div>
+  </div>
+</footer>

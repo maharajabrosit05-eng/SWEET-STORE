@@ -1,0 +1,15 @@
+<section class="brand-story">
+  <div class="container text-center">
+    <div class="brand-mark-lg">S</div>
+    <span class="since-tag">✦ SINCE 1998 ✦</span>
+    <h2 class="story-title">Rich. Rooted. Reimagined.</h2>
+
+    <div class="row g-4 mt-3">
+      <div class="col-6 col-md" *ngFor="let p of pillars">
+        <i class="bi pillar-icon" [ngClass]="p.icon"></i>
+        <h6 class="pillar-title">{{ p.title }}</h6>
+        <p class="pillar-desc">{{ p.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>

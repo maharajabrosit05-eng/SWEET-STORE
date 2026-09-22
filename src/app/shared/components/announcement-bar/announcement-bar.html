@@ -1,0 +1,13 @@
+<div class="announcement-bar">
+  <div class="track">
+    <ng-container *ngFor="let msg of messages; let i = index">
+      <span class="msg">{{ msg }}</span>
+      <span class="dot" *ngIf="i < messages.length - 1">•</span>
+    </ng-container>
+    <!-- duplicate for seamless scroll -->
+    <ng-container *ngFor="let msg of messages; let i = index">
+      <span class="msg">{{ msg }}</span>
+      <span class="dot" *ngIf="i < messages.length - 1">•</span>
+    </ng-container>
+  </div>
+</div>
